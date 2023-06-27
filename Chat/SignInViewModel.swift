@@ -9,9 +9,9 @@ import Foundation
 import FirebaseAuth
 
 class SignInViewModel: ObservableObject{
-    var email = String()
-    var password = String()
-    var alertText = String()
+    @Published var email = String()
+    @Published var password = String()
+    @Published var alertText = String()
     
     @Published var isLoading = Bool()
     @Published var formInvalid = Bool()

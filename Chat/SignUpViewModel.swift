@@ -9,11 +9,12 @@ import Foundation
 import FirebaseAuth
 import SwiftUI
 import FirebaseStorage
+import FirebaseFirestore
 
 class SignUpViewModel: ObservableObject{
-    var email = String()
-    var name = String()
-    var password = String()
+    @Published var email = String()
+    @Published var name = String()
+    @Published var password = String()
     
     @Published var image = UIImage()
     @Published var formInvalid: Bool = false
@@ -57,7 +58,25 @@ class SignUpViewModel: ObservableObject{
         ref.putData(data, metadata: newMetadata) { metadata, err in
             ref.downloadURL(completion: { url, err in
                 self.isLoading = false
+                guard let url = url else { return }
+                self.createdUser(photoUrl: url)
             })
         }
+    }
+    
+    private func createdUser(photoUrl: URL){
+        Firestore.firestore().collection("users")
+            .document()
+            .setData([
+                "name" : name,
+                "uuid": Auth.auth().currentUser!.uid,
+                "profileUrl": photoUrl.absoluteString
+            ]) { err in
+                self.isLoading = false
+                if err != nil {
+                    print(err!.localizedDescription)
+                    return
+                }
+            }
     }
 }
