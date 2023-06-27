@@ -20,10 +20,14 @@ struct SignInView: View {
                 TextField("Enter your email", text: $viewModel.email)
                     .textFieldWhiteSeparator()
                     .padding(.bottom)
-                SecureField("Enter your email", text: $viewModel.password)
+                SecureField("password", text: $viewModel.password)
                     .textFieldWhiteSeparator()
                     .padding(.bottom, 8)
                    
+                if viewModel.isLoading {
+                    ProgressView()
+                        .padding()
+                }
                 
                 Button {
                     viewModel.signIn()
@@ -34,6 +38,9 @@ struct SignInView: View {
                         .background(Color("GreenColor"))
                         .foregroundColor(.white)
                         .cornerRadius(16)
+                }
+                .alert(isPresented: $viewModel.formInvalid) {
+                    Alert(title: Text(viewModel.alertText))
                 }
                 
                 Divider()
