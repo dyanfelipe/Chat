@@ -10,44 +10,46 @@ import SwiftUI
 struct SignInView: View {
     @StateObject var viewModel = SignInViewModel()
     var body: some View {
-        VStack {
-            Image("chat_logo")
-                .resizable()
-                .scaledToFit()
-                .padding()
-            
-            TextField("Enter your email", text: $viewModel.email)
-                .textFieldWhiteSeparator()
-                .padding(.bottom)
-            SecureField("Enter your email", text: $viewModel.password)
-                .textFieldWhiteSeparator()
-                .padding(.bottom, 8)
-               
-            
-            Button {
-                viewModel.signIn()
-            } label: {
-                Text("Enter")
-                    .frame(maxWidth: .infinity)
+        NavigationView {
+            VStack {
+                Image("chat_logo")
+                    .resizable()
+                    .scaledToFit()
                     .padding()
-                    .background(Color("GreenColor"))
-                    .foregroundColor(.white)
-                    .cornerRadius(16)
-            }
-            
-            Divider()
-                .padding()
-            
-            Button {
                 
-            } label: {
-                Text("I don't have an account? click here")
-                    .foregroundColor(.black)
+                TextField("Enter your email", text: $viewModel.email)
+                    .textFieldWhiteSeparator()
+                    .padding(.bottom)
+                SecureField("Enter your email", text: $viewModel.password)
+                    .textFieldWhiteSeparator()
+                    .padding(.bottom, 8)
+                   
+                
+                Button {
+                    viewModel.signIn()
+                } label: {
+                    Text("Enter")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color("GreenColor"))
+                        .foregroundColor(.white)
+                        .cornerRadius(16)
+                }
+                
+                Divider()
+                    .padding()
+                
+                NavigationLink(destination: SignUpView()) {
+                    Text("I don't have an account? click here")
+                        .foregroundColor(.black)
+                }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.horizontal, 32)
+            .background(Color.init(red: 240 / 255, green: 231 / 255, blue: 210 / 255))
+            .navigationTitle("SignIn")
+            .navigationBarHidden(true)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.horizontal, 32)
-        .background(Color.init(red: 240 / 255, green: 231 / 255, blue: 210 / 255))
     }
 }
 
