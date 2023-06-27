@@ -1,14 +1,14 @@
 //
-//  ContentView.swift
+//  SignUpView.swift
 //  Chat
 //
-//  Created by Dyan on 6/26/23.
+//  Created by Dyan on 6/27/23.
 //
 
 import SwiftUI
 
-struct SignInView: View {
-    @StateObject var viewModel = SignInViewModel()
+struct SignUpView: View {
+    @StateObject var viewModel = SignUpViewModel()
     var body: some View {
         VStack {
             Image("chat_logo")
@@ -19,13 +19,16 @@ struct SignInView: View {
             TextField("Enter your email", text: $viewModel.email)
                 .textFieldWhiteSeparator()
                 .padding(.bottom)
+            TextField("Enter your name", text: $viewModel.email)
+                .textFieldWhiteSeparator()
+                .padding(.bottom)
             SecureField("Enter your email", text: $viewModel.password)
                 .textFieldWhiteSeparator()
                 .padding(.bottom, 8)
                
             
             Button {
-                viewModel.signIn()
+                viewModel.signUp()
             } label: {
                 Text("Enter")
                     .frame(maxWidth: .infinity)
@@ -51,29 +54,8 @@ struct SignInView: View {
     }
 }
 
-struct TextFieldWhiteSeparator: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .autocapitalization(.none)
-            .disableAutocorrection(false)
-            .padding()
-            .background(.white)
-            .cornerRadius(8.0)
-            .overlay(
-            RoundedRectangle(cornerRadius: 8)
-                .strokeBorder(Color(UIColor.separator), style: StrokeStyle(lineWidth: 1.0))
-            )
-        }
-}
-
-extension View {
-    func textFieldWhiteSeparator() -> some View {
-        modifier(TextFieldWhiteSeparator())
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
+struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignUpView()
     }
 }

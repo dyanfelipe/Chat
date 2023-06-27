@@ -12,6 +12,8 @@
 		863E9CA52A4A5BC5007D5958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863E9CA42A4A5BC5007D5958 /* Assets.xcassets */; };
 		863E9CA82A4A5BC5007D5958 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863E9CA72A4A5BC5007D5958 /* Preview Assets.xcassets */; };
 		867EB1172A4B29710045E18B /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EB1162A4B29710045E18B /* SignInViewModel.swift */; };
+		867EB1192A4B5B5F0045E18B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EB1182A4B5B5F0045E18B /* SignUpView.swift */; };
+		867EB11B2A4B5B7A0045E18B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EB11A2A4B5B7A0045E18B /* SignUpViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		863E9CA42A4A5BC5007D5958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		863E9CA72A4A5BC5007D5958 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		867EB1162A4B29710045E18B /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		867EB1182A4B5B5F0045E18B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		867EB11A2A4B5B7A0045E18B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				863E9CA02A4A5BC4007D5958 /* ChatApp.swift */,
-				867EB1162A4B29710045E18B /* SignInViewModel.swift */,
 				863E9CA22A4A5BC4007D5958 /* SignInView.swift */,
+				867EB1162A4B29710045E18B /* SignInViewModel.swift */,
+				867EB1182A4B5B5F0045E18B /* SignUpView.swift */,
+				867EB11A2A4B5B7A0045E18B /* SignUpViewModel.swift */,
 				863E9CA42A4A5BC5007D5958 /* Assets.xcassets */,
 				863E9CA62A4A5BC5007D5958 /* Preview Content */,
 			);
@@ -140,7 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				867EB1192A4B5B5F0045E18B /* SignUpView.swift in Sources */,
 				863E9CA32A4A5BC4007D5958 /* SignInView.swift in Sources */,
+				867EB11B2A4B5B7A0045E18B /* SignUpViewModel.swift in Sources */,
 				863E9CA12A4A5BC4007D5958 /* ChatApp.swift in Sources */,
 				867EB1172A4B29710045E18B /* SignInViewModel.swift in Sources */,
 			);
