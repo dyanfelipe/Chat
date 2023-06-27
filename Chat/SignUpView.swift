@@ -16,16 +16,20 @@ struct SignUpView: View {
                 .scaledToFit()
                 .padding()
             
+            TextField("Enter your name", text: $viewModel.name)
+                .textFieldWhiteSeparator()
+                .padding(.bottom)
             TextField("Enter your email", text: $viewModel.email)
                 .textFieldWhiteSeparator()
                 .padding(.bottom)
-            TextField("Enter your name", text: $viewModel.email)
-                .textFieldWhiteSeparator()
-                .padding(.bottom)
-            SecureField("Enter your email", text: $viewModel.password)
+            SecureField("Enter your password", text: $viewModel.password)
                 .textFieldWhiteSeparator()
                 .padding(.bottom, 8)
                
+            if viewModel.isLoading{
+                ProgressView()
+                    .padding()
+            }
             
             Button {
                 viewModel.signUp()
@@ -37,15 +41,8 @@ struct SignUpView: View {
                     .foregroundColor(.white)
                     .cornerRadius(16)
             }
-            
-            Divider()
-                .padding()
-            
-            Button {
-                
-            } label: {
-                Text("I don't have an account? click here")
-                    .foregroundColor(.black)
+            .alert(isPresented: $viewModel.formInvalid) {
+                Alert(title: Text(viewModel.alertText))
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
