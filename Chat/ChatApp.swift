@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import FirebaseAuth
 
 @main
 struct ChatApp: App {
@@ -17,7 +18,7 @@ struct ChatApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SignInView()
+            ContentView()
         }
     }
 }
