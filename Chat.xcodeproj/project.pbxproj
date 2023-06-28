@@ -15,6 +15,9 @@
 		8648FC932A4BAF760080C471 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8648FC922A4BAF760080C471 /* ContentViewModel.swift */; };
 		8648FC952A4BB1620080C471 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8648FC942A4BB1620080C471 /* MessagesView.swift */; };
 		8648FC972A4BB1750080C471 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8648FC962A4BB1750080C471 /* MessagesViewModel.swift */; };
+		8648FC992A4BC2950080C471 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8648FC982A4BC2950080C471 /* ContactsView.swift */; };
+		8648FC9B2A4BC2F20080C471 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8648FC9A2A4BC2F20080C471 /* ContactsViewModel.swift */; };
+		8648FC9D2A4BC3B40080C471 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8648FC9C2A4BC3B40080C471 /* Contact.swift */; };
 		867EB1172A4B29710045E18B /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EB1162A4B29710045E18B /* SignInViewModel.swift */; };
 		867EB1192A4B5B5F0045E18B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EB1182A4B5B5F0045E18B /* SignUpView.swift */; };
 		867EB11B2A4B5B7A0045E18B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EB11A2A4B5B7A0045E18B /* SignUpViewModel.swift */; };
@@ -35,6 +38,9 @@
 		8648FC922A4BAF760080C471 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		8648FC942A4BB1620080C471 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		8648FC962A4BB1750080C471 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
+		8648FC982A4BC2950080C471 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		8648FC9A2A4BC2F20080C471 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		8648FC9C2A4BC3B40080C471 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		867EB1162A4B29710045E18B /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		867EB1182A4B5B5F0045E18B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		867EB11A2A4B5B7A0045E18B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -85,6 +91,9 @@
 				867EB1252A4B75150045E18B /* ImagePicker.swift */,
 				8648FC942A4BB1620080C471 /* MessagesView.swift */,
 				8648FC962A4BB1750080C471 /* MessagesViewModel.swift */,
+				8648FC982A4BC2950080C471 /* ContactsView.swift */,
+				8648FC9A2A4BC2F20080C471 /* ContactsViewModel.swift */,
+				8648FC9C2A4BC3B40080C471 /* Contact.swift */,
 				867EB11C2A4B60390045E18B /* GoogleService-Info.plist */,
 				863E9CA42A4A5BC5007D5958 /* Assets.xcassets */,
 				863E9CA62A4A5BC5007D5958 /* Preview Content */,
@@ -179,7 +188,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8648FC9D2A4BC3B40080C471 /* Contact.swift in Sources */,
 				8648FC932A4BAF760080C471 /* ContentViewModel.swift in Sources */,
+				8648FC9B2A4BC2F20080C471 /* ContactsViewModel.swift in Sources */,
 				867EB1192A4B5B5F0045E18B /* SignUpView.swift in Sources */,
 				8648FC972A4BB1750080C471 /* MessagesViewModel.swift in Sources */,
 				8648FC952A4BB1620080C471 /* MessagesView.swift in Sources */,
@@ -188,6 +199,7 @@
 				867EB11B2A4B5B7A0045E18B /* SignUpViewModel.swift in Sources */,
 				867EB1262A4B75150045E18B /* ImagePicker.swift in Sources */,
 				863E9CA12A4A5BC4007D5958 /* ChatApp.swift in Sources */,
+				8648FC992A4BC2950080C471 /* ContactsView.swift in Sources */,
 				867EB1172A4B29710045E18B /* SignInViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +337,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,6 +367,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
