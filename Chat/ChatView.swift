@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ChatView: View {
+    let toId: String
     let username: String
     @StateObject var viewModel = ChatViewModel()
     
@@ -33,7 +34,7 @@ struct ChatView: View {
                             .strokeBorder(Color(UIColor.separator), style: StrokeStyle(lineWidth: 1))
                     )
                 Button {
-                    
+                    viewModel.sendMessage(toId: toId)
                 } label: {
                     Text("Send")
                         .padding()
@@ -48,6 +49,9 @@ struct ChatView: View {
         }
         .navigationTitle(username)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear{
+            viewModel.onAppear(toId: toId)
+        }
     }
 }
 
@@ -55,20 +59,25 @@ struct MessageRow: View {
     let message: Message
     
     var body: some View {
-        Text(message.text)
-            .background(Color(white: 0.95))
-            .frame(maxWidth: .infinity, alignment: message.isMe ? .leading : .trailing)
-            .lineLimit(nil)
-            .fixedSize(horizontal: false, vertical: true)
-            .padding(.leading, message.isMe ? 0 : 50)
-            .padding(.trailing, message.isMe ? 50 : 0)
-            .padding(.vertical, 5)
+        VStack(alignment: .leading) {
+            Text(message.text)
+                .padding(.vertical, 5)
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(.horizontal, 10)
+                .background(Color(white: 0.95))
+                .frame(maxWidth: 260, alignment: message.isMe ? .leading : .trailing)
+        }
+        .frame(maxWidth: .infinity, alignment: message.isMe ? .leading : .trailing)
     }
 }
 
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(username: "Flávia Esther Campos")
+        NavigationView {
+            ChatView(toId: UUID().uuidString, username: "Flávia Esther Campos")
+        }
+        
     }
 }

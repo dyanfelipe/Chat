@@ -65,8 +65,9 @@ class SignUpViewModel: ObservableObject{
     }
     
     private func createdUser(photoUrl: URL){
+        let id = Auth.auth().currentUser!.uid
         Firestore.firestore().collection("users")
-            .document()
+            .document(id)
             .setData([
                 "name" : name,
                 "uuid": Auth.auth().currentUser!.uid,
