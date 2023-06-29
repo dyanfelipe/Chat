@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8619DA262A4E1AD40017CF64 /* Fake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619DA252A4E1AD40017CF64 /* Fake.swift */; };
 		863E9CA12A4A5BC4007D5958 /* ChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E9CA02A4A5BC4007D5958 /* ChatApp.swift */; };
 		863E9CA32A4A5BC4007D5958 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E9CA22A4A5BC4007D5958 /* SignInView.swift */; };
 		863E9CA52A4A5BC5007D5958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863E9CA42A4A5BC5007D5958 /* Assets.xcassets */; };
@@ -33,7 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8619DA252A4E1AD40017CF64 /* Fake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fake.swift; sourceTree = "<group>"; };
 		863E9C9D2A4A5BC4007D5958 /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		863E9CA02A4A5BC4007D5958 /* ChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatApp.swift; sourceTree = "<group>"; };
 		863E9CA22A4A5BC4007D5958 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				863E9CA72A4A5BC5007D5958 /* Preview Assets.xcassets */,
-				8619DA252A4E1AD40017CF64 /* Fake.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -206,7 +203,6 @@
 				867EB1192A4B5B5F0045E18B /* SignUpView.swift in Sources */,
 				86EFBD5E2A4D0FA00072C7E5 /* ChatView.swift in Sources */,
 				8648FC972A4BB1750080C471 /* MessagesViewModel.swift in Sources */,
-				8619DA262A4E1AD40017CF64 /* Fake.swift in Sources */,
 				8648FC952A4BB1620080C471 /* MessagesView.swift in Sources */,
 				863E9CA32A4A5BC4007D5958 /* SignInView.swift in Sources */,
 				8648FC912A4BAF2A0080C471 /* ContentView.swift in Sources */,

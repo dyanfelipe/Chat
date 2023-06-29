@@ -12,8 +12,22 @@ struct MessagesView: View {
     var body: some View {
         NavigationView {
             VStack{
-                Text("Logout")
+                if viewModel.isLoading {
+                    ProgressView()
+                }
+                
+                List(viewModel.contacts, id: \.self){ contact in
+                    NavigationLink {
+                        ChatView(contact: contact)
+                    } label: {
+                        ContactMessageRow(contact: contact)
+                    }
+                }
             }
+            .onAppear{
+                viewModel.getContacts()
+            }
+            .navigationTitle("Messagens")
             .toolbar {
                 ToolbarItem(id: "contacts", placement: ToolbarItemPlacement.navigationBarTrailing, showsByDefault: true) {
                     NavigationLink("Contacts", destination: ContactsView())
@@ -26,6 +40,31 @@ struct MessagesView: View {
                     
                 }
             }
+        }
+    }
+}
+
+struct ContactMessageRow: View{
+    var contact: Contact
+    
+    var body: some View {
+        HStack {
+            AsyncImage(url: URL(string: contact.profileUrl)) { image in
+                image.resizable()
+                    .scaledToFit()
+            } placeholder: {
+                ProgressView()
+            }
+            .frame(width: 50, height: 50)
+            
+            VStack(alignment: .leading) {
+                Text(contact.name)
+                if let msg = contact.lastMessage {
+                    Text(msg)
+                }
+            }
+            Spacer()
+            
         }
     }
 }

@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ChatView: View {
-    let toId: String
-    let username: String
+    let contact: Contact
     @StateObject var viewModel = ChatViewModel()
     
     var body: some View {
@@ -34,7 +33,7 @@ struct ChatView: View {
                             .strokeBorder(Color(UIColor.separator), style: StrokeStyle(lineWidth: 1))
                     )
                 Button {
-                    viewModel.sendMessage(toId: toId)
+                    viewModel.sendMessage(contact: contact)
                 } label: {
                     Text("Send")
                         .padding()
@@ -47,10 +46,10 @@ struct ChatView: View {
             .padding(.vertical, 10)
             .padding(.vertical, 16)
         }
-        .navigationTitle(username)
+        .navigationTitle(contact.name)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear{
-            viewModel.onAppear(toId: toId)
+            viewModel.onAppear(contact: contact)
         }
     }
 }
@@ -76,7 +75,7 @@ struct MessageRow: View {
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ChatView(toId: UUID().uuidString, username: "Flávia Esther Campos")
+            ChatView(contact: Contact(uuid: UUID().uuidString, name: "Chat VIEW", profileUrl: ""))
         }
         
     }
