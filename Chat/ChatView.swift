@@ -19,8 +19,10 @@ struct ChatView: View {
         VStack{
             ScrollViewReader { value in
                 ScrollView(showsIndicators: false) {
+                    Color.clear.frame(height: 0).id(bottomID)
                     ForEach(viewModel.messages, id: \.self){ message in
                         MessageRow(message: message)
+                            .scaleEffect(x: 1, y:-1, anchor: .center)
                     }
                     .onChange(of: viewModel.messages.count) { newValue in
                         print("count is \(newValue)")
@@ -29,8 +31,10 @@ struct ChatView: View {
                         }
                     }
                     .padding(.horizontal, 20)
-                    Color.clear.frame(height: 0).id(bottomID)
+                    
                 }
+                .rotationEffect(Angle(degrees: 180))
+                .scaleEffect(x: -1, y: 1, anchor: .center)
             }
             
             Spacer()
