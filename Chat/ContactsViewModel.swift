@@ -26,7 +26,7 @@ class ContactsViewModel: ObservableObject {
                 
                 for document in querySnapshot!.documents{
                     print("ID \(document.documentID) \(document.data())")
-                    if Auth.auth().currentUser?.uid == document.documentID {                    
+                    if Auth.auth().currentUser?.uid != document.documentID {                    
                         self.contacts.append(Contact(uuid: document.documentID, name: document.data()["name"] as! String, profileUrl: document.data()["profileUrl"] as! String))
                     }
                 }

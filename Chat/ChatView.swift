@@ -64,7 +64,7 @@ struct ChatView: View {
                             RoundedRectangle(cornerRadius: 24)
                                 .strokeBorder(Color(UIColor.separator), style: StrokeStyle(lineWidth: 1))
                         )
-                        .frame(maxHeight: (textSize.height + 50) > 100 ? 100 : textSize.height + 50)
+                        .frame(maxHeight: (textSize.height + 38) > 100 ? 100 : textSize.height + 38)
                     
                     Text(viewModel.text)
                         .opacity(0)
@@ -84,7 +84,8 @@ struct ChatView: View {
                     viewModel.sendMessage(contact: contact)
                 } label: {
                     Text("Send")
-                        .padding()
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 8)
                         .background(Color("GreenColor"))
                         .foregroundColor(Color.white)
                         .cornerRadius(24)
@@ -92,7 +93,7 @@ struct ChatView: View {
                 .disabled(viewModel.text.isEmpty)
             }
             .padding(.vertical, 10)
-            .padding(.vertical, 16)
+            .padding(.horizontal, 16)
         }
         .navigationTitle(contact.name)
         .navigationBarTitleDisplayMode(.inline)
@@ -129,10 +130,14 @@ struct MessageRow: View {
                 .lineLimit(nil)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal, 10)
-                .background(Color(white: 0.95))
-                .frame(maxWidth: 260, alignment: message.isMe ? .leading : .trailing)
+                .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(message.isMe ? Color(white: 0.95) : Color("GreenLightColor"))
+                )
+                .frame(maxWidth: 260, alignment: message.isMe ?  .trailing : .leading )
         }
-        .frame(maxWidth: .infinity, alignment: message.isMe ? .leading : .trailing)
+        .padding(.horizontal, 2)
+        .frame(maxWidth: .infinity, alignment: message.isMe ? .trailing : .leading)
     }
 }
 
