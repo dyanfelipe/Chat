@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ContactsView: View {
-    @StateObject var viewModel = ContactsViewModel()
+struct ContactView: View {
+    @StateObject var viewModel = ContactViewModel()
     var body: some View {
         VStack {
             if viewModel.isLoading {
@@ -50,6 +50,6 @@ struct ContactRow: View{
 
 struct ContactsView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactsView()
+        ContactView()
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseAuth
 
-class ContactsViewModel: ObservableObject {
+class ContactViewModel: ObservableObject {
     @Published var contacts: [Contact] = []
     @Published var isLoading = false
      var isLoaded = false

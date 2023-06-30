@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct MessagesView: View {
-    @StateObject var viewModel = MessagesViewModel()
+struct MessageView: View {
+    @StateObject var viewModel = MessageViewModel()
     var body: some View {
         NavigationView {
             VStack{
@@ -30,7 +30,7 @@ struct MessagesView: View {
             .navigationTitle("Messagens")
             .toolbar {
                 ToolbarItem(id: "contacts", placement: ToolbarItemPlacement.navigationBarTrailing, showsByDefault: true) {
-                    NavigationLink("Contacts", destination: ContactsView())
+                    NavigationLink("Contacts", destination: ContactView())
                 }
                 
                 ToolbarItem(id: "logout", placement: ToolbarItemPlacement.navigationBarTrailing, showsByDefault: true) {
@@ -72,6 +72,6 @@ struct ContactMessageRow: View{
 
 struct MessagesView_Previews: PreviewProvider {
     static var previews: some View {
-        MessagesView()
+        MessageView()
     }
 }
