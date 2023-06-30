@@ -76,7 +76,7 @@ class ChatViewModel: ObservableObject {
     
     
     func sendMessage(contact: Contact)  {
-        let text = self.text
+        let text = self.text.trimmingCharacters(in: .whitespacesAndNewlines)
         inserting = true
         newCount += newCount
         self.text = ""
