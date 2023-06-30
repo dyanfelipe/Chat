@@ -20,17 +20,27 @@ struct ChatView: View {
             ScrollViewReader { value in
                 ScrollView(showsIndicators: false) {
                     Color.clear.frame(height: 0).id(bottomID)
-                    ForEach(viewModel.messages, id: \.self){ message in
-                        MessageRow(message: message)
-                            .scaleEffect(x: 1, y:-1, anchor: .center)
-                    }
-                    .onChange(of: viewModel.messages.count) { newValue in
-                        print("count is \(newValue)")
-                        withAnimation {
-                            value.scrollTo(bottomID)
+                    LazyVStack {
+                        ForEach(viewModel.messages, id: \.self) { message in
+                            MessageRow(message: message)
+                                .scaleEffect(x: 1, y:-1, anchor: .center)
+                                .onAppear {
+                                    if message == viewModel.messages.last && viewModel.messages.count >= viewModel.limit {
+                                        viewModel.onAppear(contact: contact)
+                                        print("LazyVStack -> \(message)")
+                                    }
+                                }
                         }
+                        .onChange(of: viewModel.newCount) { newValue in
+                            print("count is \(newValue)")
+                            if newValue > viewModel.messages.count {
+                                withAnimation {
+                                    value.scrollTo(bottomID)
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 20)
                     }
-                    .padding(.horizontal, 20)
                     
                 }
                 .rotationEffect(Angle(degrees: 180))

@@ -17,6 +17,9 @@ class ChatViewModel: ObservableObject {
     
     var myName = String()
     var myPhoto = String()
+    var limit = 20
+    var inserting = false
+    var newCount = 0
     
     func onAppear(contact: Contact){
         let fromId = Auth.auth().currentUser!.uid
@@ -40,7 +43,7 @@ class ChatViewModel: ObservableObject {
             .collection(contact.uuid)
             .order(by: "timestamp", descending: true)
             .start(after: [self.messages.last?.timestamp ?? 999999999999999])
-            .limit(to: 20)
+            .limit(to: limit)
             .addSnapshotListener{ querySnapshot, err in
                 if let err = err {
                     print("Error: fetching documents \(err)")
@@ -58,17 +61,24 @@ class ChatViewModel: ObservableObject {
                                                   isMe: fromId == document.data()["fromId"] as! String,
                                                   timestamp: document.data()["timestamp"] as! UInt
                             )
-                            
-                            self.messages.append(message)
+                            if self.inserting{
+                                self.messages.insert(message, at: 0)
+                            } else {
+                                self.messages.append(message)
+                            }
                         }
                     }
+                    self.inserting = false
                 }
+                self.newCount = self.messages.count
             }
     }
     
     
     func sendMessage(contact: Contact)  {
         let text = self.text
+        inserting = true
+        newCount += newCount
         self.text = ""
         let fromId = Auth.auth().currentUser!.uid
         let timestamp = Date().timeIntervalSince1970
