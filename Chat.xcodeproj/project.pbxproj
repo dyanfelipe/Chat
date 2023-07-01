@@ -26,6 +26,11 @@
 		867EB1222A4B62950045E18B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 867EB1212A4B62950045E18B /* FirebaseFirestore */; };
 		867EB1242A4B62950045E18B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 867EB1232A4B62950045E18B /* FirebaseStorage */; };
 		867EB1262A4B75150045E18B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EB1252A4B75150045E18B /* ImagePicker.swift */; };
+		86C12E162A4F83F800642EA1 /* SignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C12E152A4F83F800642EA1 /* SignInRepository.swift */; };
+		86C12E182A4F874B00642EA1 /* SignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C12E172A4F874B00642EA1 /* SignUpRepository.swift */; };
+		86C12E1A2A4F8E1600642EA1 /* MessageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C12E192A4F8E1600642EA1 /* MessageRepository.swift */; };
+		86C12E1C2A4F907B00642EA1 /* ContactRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C12E1B2A4F907B00642EA1 /* ContactRepository.swift */; };
+		86C12E1E2A4F932100642EA1 /* ChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C12E1D2A4F932100642EA1 /* ChatRepository.swift */; };
 		86EFBD5A2A4D0D770072C7E5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EFBD592A4D0D770072C7E5 /* Message.swift */; };
 		86EFBD5C2A4D0DC10072C7E5 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EFBD5B2A4D0DC10072C7E5 /* ChatViewModel.swift */; };
 		86EFBD5E2A4D0FA00072C7E5 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EFBD5D2A4D0FA00072C7E5 /* ChatView.swift */; };
@@ -49,6 +54,11 @@
 		867EB11A2A4B5B7A0045E18B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		867EB11C2A4B60390045E18B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		867EB1252A4B75150045E18B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		86C12E152A4F83F800642EA1 /* SignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRepository.swift; sourceTree = "<group>"; };
+		86C12E172A4F874B00642EA1 /* SignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepository.swift; sourceTree = "<group>"; };
+		86C12E192A4F8E1600642EA1 /* MessageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepository.swift; sourceTree = "<group>"; };
+		86C12E1B2A4F907B00642EA1 /* ContactRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRepository.swift; sourceTree = "<group>"; };
+		86C12E1D2A4F932100642EA1 /* ChatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRepository.swift; sourceTree = "<group>"; };
 		86EFBD592A4D0D770072C7E5 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		86EFBD5B2A4D0DC10072C7E5 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		86EFBD5D2A4D0FA00072C7E5 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -116,6 +126,7 @@
 			children = (
 				863E9CA22A4A5BC4007D5958 /* SignInView.swift */,
 				867EB1162A4B29710045E18B /* SignInViewModel.swift */,
+				86C12E152A4F83F800642EA1 /* SignInRepository.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -125,6 +136,7 @@
 			children = (
 				867EB1182A4B5B5F0045E18B /* SignUpView.swift */,
 				867EB11A2A4B5B7A0045E18B /* SignUpViewModel.swift */,
+				86C12E172A4F874B00642EA1 /* SignUpRepository.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -134,6 +146,7 @@
 			children = (
 				86EFBD5D2A4D0FA00072C7E5 /* ChatView.swift */,
 				86EFBD5B2A4D0DC10072C7E5 /* ChatViewModel.swift */,
+				86C12E1D2A4F932100642EA1 /* ChatRepository.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -143,6 +156,7 @@
 			children = (
 				8648FC982A4BC2950080C471 /* ContactView.swift */,
 				8648FC9A2A4BC2F20080C471 /* ContactViewModel.swift */,
+				86C12E1B2A4F907B00642EA1 /* ContactRepository.swift */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -152,6 +166,7 @@
 			children = (
 				8648FC942A4BB1620080C471 /* MessageView.swift */,
 				8648FC962A4BB1750080C471 /* MessageViewModel.swift */,
+				86C12E192A4F8E1600642EA1 /* MessageRepository.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -262,6 +277,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8648FC9D2A4BC3B40080C471 /* Contact.swift in Sources */,
+				86C12E1E2A4F932100642EA1 /* ChatRepository.swift in Sources */,
+				86C12E182A4F874B00642EA1 /* SignUpRepository.swift in Sources */,
 				8648FC932A4BAF760080C471 /* ContentViewModel.swift in Sources */,
 				8648FC9B2A4BC2F20080C471 /* ContactViewModel.swift in Sources */,
 				867EB1192A4B5B5F0045E18B /* SignUpView.swift in Sources */,
@@ -272,11 +289,14 @@
 				8648FC912A4BAF2A0080C471 /* ContentView.swift in Sources */,
 				867EB11B2A4B5B7A0045E18B /* SignUpViewModel.swift in Sources */,
 				867EB1262A4B75150045E18B /* ImagePicker.swift in Sources */,
+				86C12E1A2A4F8E1600642EA1 /* MessageRepository.swift in Sources */,
 				863E9CA12A4A5BC4007D5958 /* ChatApp.swift in Sources */,
+				86C12E1C2A4F907B00642EA1 /* ContactRepository.swift in Sources */,
 				8648FC992A4BC2950080C471 /* ContactView.swift in Sources */,
 				867EB1172A4B29710045E18B /* SignInViewModel.swift in Sources */,
 				86EFBD5C2A4D0DC10072C7E5 /* ChatViewModel.swift in Sources */,
 				86EFBD5A2A4D0D770072C7E5 /* Message.swift in Sources */,
+				86C12E162A4F83F800642EA1 /* SignInRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
