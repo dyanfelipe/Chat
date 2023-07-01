@@ -23,8 +23,6 @@ class MessageRepository {
                     for doc in changes {
                         if doc.type == .added {
                             let document = doc.document
-                            contacts.removeAll()
-                            print(document.data())
                             contacts.append(Contact(uuid: document.documentID,
                                                          name: document.data()["username"] as! String,
                                                          profileUrl:  document.data()["photoUrl"] as! String,
