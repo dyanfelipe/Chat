@@ -1,7 +1,7 @@
-# Descrição do Aplicativo de Mensagens
+# Descrição do Aplicativo de Mensagens iOS com SwiftUI e Firebase
 
 ## Visão Geral
-O Aplicativo de Mensagens é uma plataforma de comunicação que permite aos usuários enviar mensagens, compartilhar imagens, criar usuários, fazer login, visualizar listas de usuários, conversas e contatos. Ele foi desenvolvido utilizando o Firebase para autenticação, armazenamento de dados em tempo real e armazenamento de imagens.
+O Aplicativo de Mensagens iOS é uma plataforma de comunicação que permite aos usuários enviar mensagens, compartilhar imagens, criar usuários, fazer login, visualizar listas de usuários, conversas e contatos. Ele foi desenvolvido utilizando o SwiftUI para criar a interface do usuário e o Firebase para autenticação, armazenamento de dados em tempo real e armazenamento de imagens.
 
 ## Recursos Principais
 O aplicativo oferece os seguintes recursos principais:
@@ -21,10 +21,10 @@ O aplicativo oferece os seguintes recursos principais:
 ## Tecnologias Utilizadas
 O aplicativo é desenvolvido utilizando as seguintes tecnologias:
 
+- SwiftUI: Para criar a interface do usuário nativa do iOS.
 - Firebase Authentication (FirebaseAuth): Para autenticação de usuários.
 - Firebase Firestore (FirebaseFirestore): Para armazenamento e sincronização de dados em tempo real.
 - Firebase Storage (FirebaseStorage): Para armazenamento de imagens enviadas pelos usuários.
 
 ## Conclusão
-O Aplicativo de Mensagens baseado em Firebase oferece uma experiência de comunicação segura e conveniente para os usuários. Com recursos como autenticação, armazenamento em tempo real, compartilhamento de imagens e listas de usuários, conversas e contatos, ele proporciona uma plataforma completa para conectar pessoas e trocar mensagens de forma fácil e eficiente.
-
+O Aplicativo de Mensagens iOS com SwiftUI e Firebase oferece uma experiência de comunicação segura e conveniente para os usuários do iOS. Com recursos como autenticação, armazenamento em tempo real, compartilhamento de imagens e listas de usuários, conversas e contatos, ele proporciona uma plataforma completa para conectar pessoas e trocar mensagens de forma fácil e eficiente em dispositivos iOS.
